@@ -1,13 +1,13 @@
 Name:           gnome-shell-extension-zorin-taskbar
 Version:        4.5.0
 Release:        4%{?dist}
-Summary:        A simple hello world script
+Summary:        Zorin Taskbar extension. A taskbar extension for the Zorin Desktop environment.
 BuildArch:      noarch
 
 License:        GPL
 Source0:        %{name}-%{version}.tar.gz
 
-Requires:       bash
+Requires:       gnome-shell
 
 %description
 A demo RPM build
@@ -16,9 +16,9 @@ A demo RPM build
 %setup -q
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}
-cp %{name}.sh $RPM_BUILD_ROOT/%{_bindir}
+rm -rf "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com"
+mkdir -p "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com"
+cp %{_bindir}/_build/* "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com/"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
