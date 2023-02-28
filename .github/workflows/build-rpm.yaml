@@ -11,7 +11,7 @@ jobs:
       run: sudo apt-get install gettext -y
 
     - name: build
-      run: make zip-file
+      run: make _build
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
