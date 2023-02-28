@@ -8,7 +8,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: deps
-      run: apt-get install gettext -y
+      run: sudo apt-get install gettext -y
 
     - name: build
       run: make zip-file
