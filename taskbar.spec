@@ -18,15 +18,13 @@ A demo RPM build
 %install
 rm -rf "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com"
 mkdir -p "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com"
-cp %{_bindir}/_build/* "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com/"
+cp _build/* "$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com/"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%{_bindir}/_build/*
-%{_bindir}/COPYING
-%{_bindir}/README.md
+$HOME/.local/share/gnome-shell/extensions/zorin-taskbar@zorinos.com/*
 
 %changelog
 * Sun Nov  18 2020 Valentin Bajrami <valentin.bajrami@slimmer.ai> - 0.0.1
